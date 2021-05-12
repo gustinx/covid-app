@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps} from 'react-native';
+import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
@@ -21,28 +22,28 @@ export function Button ({ title, disabled = false, ...rest}: ButtonProps) {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   disabled: {
     backgroundColor: colors.green_light,
-    height: 56,
-    borderRadius: 16,
+    height: '4rem',
+    borderRadius: '1rem',
     justifyContent: 'center',
     alignItems: 'center'
   },
   enabled: {
     backgroundColor: colors.green,
-    height: 56,
-    borderRadius: 16,
+    height: '4rem',
+    borderRadius: '1rem',
     justifyContent: 'center',
     alignItems: 'center'
   },
   textDisabled: {
-    fontSize: 16,
+    fontSize: '1rem',
     color: colors.gray,
     fontFamily: fonts.heading
   },
   text: {
-    fontSize: 16,
+    fontSize: '1rem',
     color: colors.white,
     fontFamily: fonts.heading
   }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
@@ -15,27 +16,27 @@ export function Header(){
   )
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     width: '100%',
-    height: 80,
+    height: '5rem',
     backgroundColor: colors.green,
   },
   content: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingTop: 15,
-    paddingHorizontal: 15,
+    paddingTop: '1rem',
+    paddingHorizontal: '1rem',
     alignItems: 'center'
   },
   text: {
-    fontSize: 20,
+    fontSize: '1.25rem',
     fontFamily: fonts.heading,
     color: colors.white,
   },
   updatedAt: {
     color: colors.heading,
-    fontSize: 12,
-    fontFamily: fonts.text
+    fontSize: '0.7rem',
+    fontFamily: fonts.text,
   }
 })

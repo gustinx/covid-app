@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import { useNavigation, useRoute } from '@react-navigation/native'
 
 import { Button } from '../components/Button';
@@ -50,7 +51,7 @@ export function Confirmation() {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
@@ -61,26 +62,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    padding: 30
+    padding: '2.5rem'
   },
   title: {
-    fontSize: 22,
+    fontSize: '1.5rem',
     fontFamily: fonts.heading,
     textAlign: 'center',
     color: colors.heading,
-    lineHeight: 38,
-    marginTop: 15
+    lineHeight: '2rem',
   },
   subtitle: {
     fontFamily: fonts.text,
     textAlign: 'center',
-    fontSize: 17,
-    paddingVertical: 10,
+    fontSize: '1rem',
+    paddingVertical: '0.6rem',
     color: colors.heading
   },
   footer: {
     width: '100%',
-    paddingHorizontal: 50,
-    marginTop: 20
+    paddingHorizontal: '2rem',
+    marginTop: '1.5rem'
   }
 })

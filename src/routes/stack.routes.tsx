@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Welcome } from '../screens/Welcome';
 import { Confirmation } from '../screens/Confirmation';
-import { Dashboard } from '../screens/Dashboard';
+import AuthRoutes from './tabs.routes'
 
 import colors from '../styles/colors';
 
@@ -28,7 +28,7 @@ const AppRoutes: React.FC = () => (
     />
     <stackRoutes.Screen
       name='Dashboard'
-      component={Dashboard}
+      component={AuthRoutes}
     />
   </stackRoutes.Navigator>
 )

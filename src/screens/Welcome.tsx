@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput, Text, SafeAreaView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import { View, TextInput, Text, SafeAreaView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/native';
 
@@ -89,7 +90,7 @@ export function Welcome() {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
@@ -103,33 +104,32 @@ const styles = StyleSheet.create({
   form: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 54,
+    paddingHorizontal: '4rem',
     alignItems: 'center'
   },
   header: {
     alignItems: 'center',
   },
   title: {
-    fontSize: 24,
-    lineHeight: 32,
+    fontSize: '1.5rem',
+    lineHeight: '2rem',
     textAlign: 'center',
     color: colors.heading,
     fontFamily: fonts.heading,
-    marginTop: 20
   },
   input: {
     borderBottomWidth: 1,
     borderColor: colors.gray,
     color: colors.heading,
     width: '100%',
-    fontSize: 18,
-    marginTop: 50,
-    padding: 10,
+    fontSize: '1rem',
+    marginTop: '3rem',
+    padding: '0.6rem',
     textAlign: 'center'
   },
   footer: {
     width: '100%',
-    marginTop: 40,
-    paddingHorizontal: 20
+    marginTop: '2rem',
+    paddingHorizontal: '1.5rem'
   } 
 })
