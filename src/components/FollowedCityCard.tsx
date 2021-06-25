@@ -11,11 +11,11 @@ import fonts from '../styles/fonts';
 
 interface FollowedCitiesProps extends RectButtonProps {
   city_name: string;
-  confirmed_cases: number;
+  
   handleRemove?: () => void;
 }
 
-export function FollowedCityCard({ city_name, confirmed_cases, handleRemove, ...rest }: FollowedCitiesProps) {
+export function FollowedCityCard({ city_name, handleRemove, ...rest }: FollowedCitiesProps) {
   return (
     <Swipeable
       overshootRight={false}
@@ -33,9 +33,6 @@ export function FollowedCityCard({ city_name, confirmed_cases, handleRemove, ...
         <Text style={styles.cityName}>
           {city_name}
         </Text>
-        <Text style={styles.confirmedCases}>
-          {confirmed_cases}
-        </Text>
       </RectButton>
     </Swipeable>
   )
@@ -47,19 +44,15 @@ const styles = EStyleSheet.create({
     height: '4rem',
     justifyContent: 'center',
     backgroundColor: colors.white,
-    alignItems: 'flex-start',
     borderRadius: '0.5rem',
     margin: '0.4rem',
     paddingHorizontal: '0.9rem'
   },
   cityName: {
-    fontSize: '0.75rem',
-    fontFamily: fonts.text,
-    color: colors.heading
-  },
-  confirmedCases: {
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     fontFamily: fonts.heading,
+    color: colors.heading,
+    textAlign: 'center'
   },
   buttonRemove: {
     width: '4rem',

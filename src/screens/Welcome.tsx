@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { View, TextInput, Text, SafeAreaView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, TextInput, Text, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/native';
@@ -15,7 +16,21 @@ export function Welcome() {
 
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
-  const [name, setName] = useState<string>();
+  const [name, setName] = useState<string>('');
+
+  useEffect(() => {
+    async function loadStorageUserName() {
+      const user = await AsyncStorage.getItem('@newssarscovid19:user');
+      
+      if (user) {
+        navigation.navigate('Dashboard')
+      }
+    }
+
+    loadStorageUserName()
+  }, [])
+
+  console.log(name)
 
   function handleInputBlur(){
     setIsFocused(false);

@@ -6,6 +6,7 @@ import { Confirmation } from '../screens/Confirmation';
 import AuthRoutes from './tabs.routes'
 
 import colors from '../styles/colors';
+import { CityDetails } from '../screens/CityDetails';
 
 const stackRoutes = createStackNavigator();
 
@@ -29,6 +30,10 @@ const AppRoutes: React.FC = () => (
     <stackRoutes.Screen
       name='Dashboard'
       component={AuthRoutes}
+    />
+    <stackRoutes.Screen
+      name='CityDetails'
+      component={CityDetails}
     />
   </stackRoutes.Navigator>
 )
